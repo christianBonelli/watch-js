@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home utente</title>
+  <style>
+    body {
+      font-family: Koulen;
+
+      margin: 0;
+      padding: 0;
+      background-image: url(img/sfondo.jpg);
+      background-size: cover;
+      color: white;
+      
+    }
+    .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        /* Stile della card */
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px;
+            max-width: 400px;
+            width: 100%; /* Occupa tutta la larghezza disponibile */
+            background-color:rgba(19, 90, 58, 0.8);
+
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+
+
+      header img{
+    width:17%;
+    border-radius: 20px;
+       }
+      footer {
+      background-color: #135A3A;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+
+
+
+
+    @keyframes scrollImages {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
+
+.btn{
+   margin: 10px;
+
+font-family: Koulen;
+font-weight: 0;
+font-size: 20px;
+color: black;
+background-color: #135A3A;
+padding: 10px 30px;
+border: solid black 2px;
+box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+border-radius: 50px;
+transition : 1000ms;
+transform: translateY(0);
+display: flex;
+flex-direction: row;
+align-items: center;
+cursor: pointer;
+}
+
+.btn:hover{
+
+transition : 1000ms;
+padding: 10px 50px;
+transform : translateY(-0px);
+background-color: #fff;
+color: #135A3A;
+border: solid 2px #135A3A;
+}
+@media screen and (max-width: 768px) {
+    .btn {
+        font-size: 12px;
+        padding: 8px 20px;
+    }
+}
+
+    
+
+
+
+    /*carosello*/
+
+    .carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.next-btn {
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.company-container {
+  background-color: #135A3A;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.company-info {
+  max-width: 600px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
+
+.btn1{
+
+font-family: Raleway;
+font-weight: 400;
+font-size: 30px;
+color: #fff;
+background: linear-gradient(152deg, #60de54 0%, #3a4237 100%);
+padding: 20px 40px;
+border: solid #71e05f 2px;
+box-shadow: rgb(73, 224, 73) 5px 5px 25px 5px;
+border-radius: 16px;
+transition : 1000ms;
+transform: translateY(0);
+display: flex;
+flex-direction: row;
+align-items: center;
+cursor: pointer;
+}
+
+.btn1:hover{
+
+transition : 1000ms;
+padding: 10px 50px;
+transform : translateY(-0px);
+background: linear-gradient(152deg, #60de54 0%, #3a4237 100%);
+color: #191a19;
+border: solid 2px #57694c;
+}
+
+
+
+
+</style>
+
+
+
+</head>
+
+
+
+<body>
+
+    <div class="company-container">
+        <div class="company-info">
+          <h1>Bit Watch</h1>
+          <p id="company-description">
+            Laboratorio specializzato nell'aggiustare orologi di alta qualità. Accedi al tuo account per visualizzare gli orologi e richiedere preventivi personalizzati.
+          </p>
+
+        </div>
+        <button onclick="Login()"class="btn1">Login</button>
+
+
+      </div>
+
+
+<div id="language-selector">
+
+<!--bottone cambio lingua-->
+    <button class="btn" data-lang="it" onclick="changeLanguage('it')">Italiano</button>
+    <button class="btn" data-lang="en" onclick="changeLanguage('en')">English</button>
+</div>
+
+
+<div class="carousel-container">
+    <div class="carousel">
+      <div class="slide" id="slide1">
+        <img src="img/operaio1.jpg" alt="Immagine 1">
+      </div>
+      <div class="slide" id="slide2">
+        <img src="img/operaio2.jpg" alt="Immagine 2">
+      </div>
+      <div class="slide" id="slide3">
+        <img src="img/operaio3.jpg" alt="Immagine 3">
+      </div>
+    </div>
+    <button class="prev-btn" onclick="changeSlide(-1)">❮</button>
+    <button class="next-btn" onclick="changeSlide(1)">❯</button>
+  </div>
+  <br><br>
+
+
+
+
+
+<br><br>
+<div class="row" id="contenitore">
+    <div class="card">
+        <img src="img/tudor_2.jpg" alt="">
+        <h2 id="personal-data-message-1">con il nostro laboratorio di ultima gerazine siamo pronti a mettere mano su quasliasi orologio di prestigio</h2>
+      </div>
+      <div class="card">
+    <img src="img/rolex_tiffany.jpg" alt="">
+    <h2 id="personal-data-message-2">ogni anno aggiustiamo più di 2000 orologi di lusso, la nostra esperienza non si discute, qui da 30 anni</h2>
+  </div>
+</div>
+
+</div>
+<!--card con i vari links-->
+<div id="contenitore" class="row">
+  <div class="card">
+    <img src="img/logo.jpg" alt="">
+    <h2 id="contact-message-3">i nostri tecnici altamente qualificati, hanno esperienze all estero e ogni anno praticano corsi specializzati </h2>
+  </div>
+</div>
+<br><br><br>
+
+
+
+
+
+
+<!--footer-->
+<footer>
+  <h2 id="footer-title">Bit Watch Il Nostro Laboratorio di Orologeria</h2>
+
+  <p id="footer-email"><a href="mailto:info@laboratorioorologi.com"></a>Email: info@laboratorioorologi.com</p>
+  <p id="footer-phone">Telefono: +39 123 4567890</p>
+  <p id="footer-address">Indirizzo: Via degli Orologiai, 123, 00100, Città</p>
+
+  <div class="social-icons">
+    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+  </div>
+
+  <p id="footer-copyright">&copy; 2024 Il Nostro Laboratorio di Orologeria. Tutti i diritti riservati.</p>
+</footer>
+
+
+
+    <script>
+
+
+
+
+      // Funzione per cambiare la lingua
+      function changeLanguage(lang) {
+          // Definisci le traduzioni per le lingue supportate
+          const translations = {
+              'it': {
+                'company-name': 'Bit Watch',
+          'company-description': 'Laboratorio specializzato nell aggiustare orologi di alta qualità. Accedi al tuo account per visualizzare gli orologi e richiedere preventivi personalizzati.',
+          'personal-data-message-1': 'Con il nostro laboratorio di ultima generazione siamo pronti a mettere mano su qualsiasi orologio di prestigio.',
+          'personal-data-message-2': 'Ogni anno aggiustiamo più di 2000 orologi di lusso, la nostra esperienza non si discute, qui da 30 anni.',
+          'contact-message-3': 'I nostri tecnici altamente qualificati hanno esperienze all estero e ogni anno praticano corsi specializzati.'
+              },
+              'en': {
+                'company-name': 'Bit Watch',
+          'company-description': 'Specialized laboratory in repairing high-quality watches. Log in to view your watches and request customized quotes.',
+          'personal-data-message-1': 'With our state-of-the-art laboratory, we are ready to work on any prestigious watch.',
+          'personal-data-message-2': 'Every year we repair more than 2000 luxury watches. Our experience is unquestionable, here for 30 years.',
+          'contact-message-3': 'Our highly qualified technicians have international experience and undergo specialized courses every year.',
+              }
+          };
+    
+          // Cambia i testi dei label in base alla lingua
+          Object.keys(translations[lang]).forEach(function (key) {
+              const element = document.getElementById(key);
+              if (element) {
+                  element.textContent = translations[lang][key];
+              }
+          });
+      }
+//carosello
+      let currentIndex = 0;
+
+function changeSlide(direction) {
+  const slides = document.querySelector('.carousel');
+  const totalSlides = document.querySelectorAll('.slide').length;
+
+  currentIndex += direction;
+
+  if (currentIndex < 0) {
+    currentIndex = totalSlides - 1;
+  } else if (currentIndex >= totalSlides) {
+    currentIndex = 0;
+  }
+
+  const translateValue = -currentIndex * 100 + '%';
+  slides.style.transform = 'translateX(' + translateValue + ')';
+}
+
+function Login() {
+      window.location.href = "login.html";
+    }
+    </script>
+
+
+
+
+
+
+</body>
+</html>

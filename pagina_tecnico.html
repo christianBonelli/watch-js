@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/instagram.css' rel='stylesheet'>
+    <title>pagina Tecnico</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    body {
+      font-family: Koulen;
+
+      margin: 0;
+      padding: 0;
+      background-image: url(img/sfondo.jpg);
+      background-size: contain;
+      color: white;
+      
+      
+    }
+    .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        /* Stile della card */
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px 0 0 0;
+            max-width: 400px;
+            width: 100%; 
+            background-color:rgba(19, 90, 58, 0.8);
+
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+
+
+header img{
+    width:17%;
+    border-radius: 20px;
+}
+
+/*footer*/
+footer {
+      background-color: #135A3A;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    .social-icons a:hover {
+      color: #006400; /* Colore verde scuro al passaggio del mouse */
+    }
+
+
+
+
+    @keyframes scrollImages {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
+
+
+/*bottone*/
+.btn{
+   margin: 10px;
+
+font-family: Koulen;
+font-weight: 0;
+font-size: 20px;
+color: black;
+background-color: #135A3A;
+padding: 10px 30px;
+border: solid black 2px;
+box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+border-radius: 50px;
+transition : 1000ms;
+transform: translateY(0);
+display: flex;
+flex-direction: row;
+align-items: center;
+cursor: pointer;
+}
+.bottoni_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centro i bottoni lungo l'asse principale */
+    align-items: center; /* Centro i bottoni lungo l'asse trasversale */
+    flex-wrap: wrap; /* Permette ai bottoni di passare a una nuova riga su schermi più piccoli */
+    margin-bottom: 20px
+}
+
+.btn:hover{
+
+transition : 1000ms;
+padding: 10px 50px;
+transform : translateY(-0px);
+background-color: #fff;
+color: #135A3A;
+border: solid 2px #135A3A;
+}
+@media screen and (max-width: 768px) {
+    .btn {
+        font-size: 12px;
+        padding: 8px 20px;
+    }
+}
+/*bottone cancella*/
+    button.rimuovi{
+        margin: 10px;
+
+    font-family: Koulen;
+    font-weight: 0;
+    font-size: 14px;
+    color: white;
+    background-color: red;
+    padding: 10px 30px;
+    border: solid black 2px;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border-radius: 50px;
+    transition : 1000ms;
+    transform: translateY(0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    }
+    .rimuovi:hover{
+
+transition : 1000ms;
+padding: 10px 50px;
+transform : translateY(-0px);
+background-color: #fff;
+color: #135A3A;
+border: solid 2px #135A3A;
+}
+h3{
+    text-align: center;
+    font-size: 30px;
+    h5{
+        font-size: 30px;
+    }
+}
+    @media screen and (max-width: 768px) {
+    .btn {
+        font-size: 12px;
+        padding: 8px 20px;
+    }
+}
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
+
+    /*navbar*/
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      margin: 5px 0; 
+      font-size: 16px;
+    }
+    nav a:hover {
+      color: #006400; 
+    }
+
+    #main-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      background-color:rgba(19, 90, 58, 0.8);
+      padding: 10px;
+    }
+
+    #home-link,
+    #watches-link,
+    #assistance-link,
+    #my-data-link {
+      text-decoration: none;
+      color: white;
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    #home-link:hover,
+    #watches-link:hover,
+    #assistance-link:hover,
+    #my-data-link:hover {
+      color: #006400;
+    }
+
+
+
+
+  </style>
+
+</head>
+<body>
+
+    <!--navbar-->
+    <nav id="main-nav">
+      <a href="pagina_tecnico.html" id="watch">Orologi</a>  
+      <a href="tecnicoclienti.html" id="info"> dati Clienti</a>
+      <a href="index.html" id="my-data-link1">esci</a>
+
+    </nav>
+     <!--bottone cambio lingua-->
+    <button class="btn" data-lang="it" onclick="changeLanguage('it')">Italiano</button>
+    <button class="btn" data-lang="en" onclick="changeLanguage('en')">English</button>
+ 
+
+
+
+
+
+<!--filtro marca-->
+<div class="bottoni_row">
+      
+        <button class="btn" onclick="filtraPerCategoria('Tudor')">Tudor</button>
+        <button class="btn" onclick="filtraPerCategoria('Patek')">Patek</button>
+        <button class="btn" onclick="filtraPerCategoria('Rolex')">Rolex</button>
+  
+    <!--filtro problema-->
+   
+       
+        <button class="btn"  id="bracciali" onclick="filtraPerProblema('bracciale')">Bracciale</button>
+        <button class="btn" id="corone" onclick="filtraPerProblema('corona')">Corona</button>
+        <button class="btn" id="movimenti"  onclick="filtraPerProblema('movimento')">Movimento</button>
+    </div>
+    
+
+    <!--card con js-->
+<div id="contenitore"class="row">
+</div>
+<br><br><br><br>
+
+
+
+
+
+<!--footer-->
+<footer>
+    <h2 id="footer-title">Bit Watch Il Nostro Laboratorio di Orologeria</h2>
+  
+    <p id="footer-email"><a href="mailto:info@laboratorioorologi.com">Email: info@laboratorioorologi.com</a></p>
+    <p id="footer-phone">Telefono: +39 123 4567890</p>
+    <p id="footer-address">Indirizzo: Via degli Orologiai, 123, 00100, Città</p>
+    
+    <div class="social-icons">
+
+    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+    </div>
+    <p id="footer-copyright">&copy; 2024 Il Nostro Laboratorio di Orologeria. Tutti i diritti riservati.</p>
+  </footer>
+  
+
+
+
+
+<script src="tecnico.js"></script>
+
+
+
+
+
+</body>
+</html>

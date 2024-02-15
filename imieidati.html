@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i miei dati</title>
+    <style>
+        body {
+            font-family: Koulen;
+            color: white;
+    
+          margin: 0;
+          padding: 0;
+          background-image: url(img/sfondo.jpg);
+          background-size: contain;
+          
+        }
+       
+    
+       footer {
+      background-color: #135A3A;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+
+
+
+
+    @keyframes scrollImages {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
+     /*bottone*/
+        .btn{
+   margin: 10px;
+
+font-family: Koulen;
+font-weight: 0;
+font-size: 20px;
+color: black;
+background-color: #135A3A;
+padding: 10px 30px;
+border: solid black 2px;
+box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+border-radius: 50px;
+transition : 1000ms;
+transform: translateY(0);
+display: flex;
+flex-direction: row;
+align-items: center;
+cursor: pointer;
+}
+
+.btn:hover{
+
+transition : 1000ms;
+padding: 10px 50px;
+transform : translateY(-0px);
+background-color: #fff;
+color: #135A3A;
+border: solid 2px #135A3A;
+}
+@media screen and (max-width: 768px) {
+    .btn {
+        font-size: 12px;
+        padding: 8px 20px;
+    }
+}
+   
+
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    .social-icons a:hover {
+      color: #006400; /* Colore verde scuro al passaggio del mouse */
+    }
+
+
+    /*tabella dati*/
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color:  #135A3A;
+      table-layout: fixed;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #006400;
+    }
+
+
+    /*navbar*/
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      margin: 5px 0;
+      font-size: 16px;
+    }
+    nav a:hover {
+      color: #006400; /* Colore verde scuro al passaggio del mouse */
+    }
+
+    #main-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+     background-color:rgba(19, 90, 58, 0.8);
+
+      padding: 10px;
+    }
+
+    #home-link,
+    #watches-link,
+    #assistance-link,
+    #my-data-link {
+      text-decoration: none;
+      color: white;
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    #home-link:hover,
+    #watches-link:hover,
+    #assistance-link:hover,
+    #my-data-link:hover {
+      color: #006400;
+    }
+</style>
+    
+</head>
+<body>
+    <!--navbar-->
+    <nav id="main-nav">
+      <a href="homeutente.html" id="">Home</a>
+      <a href="pagina_utente.html" id="assistance-link">Assistenza</a>       
+      <a href="imieidati.html" id="my-data-link">I miei dati</a>
+      <a href="index.html" id="my-data-link1">esci</a>
+
+    </nav>
+
+
+
+<!--selettore lingua-->
+<div id="language-selector">
+  <button class="btn" data-lang="it" onclick="changeLanguage('it')">Italiano</button>
+  <button class="btn" data-lang="en" onclick="changeLanguage('en')">English</button>
+</div>
+
+   <!--dati clienti-->
+<table id="customer-data">
+  <thead>
+    <tr>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="name-label">Nome</td>
+      <td id="name">Mario</td>
+    </tr>
+    <tr>
+      <td id="surname-label">Cognome</td>
+      <td id="surname">Rossi</td>
+    </tr>
+    <tr>
+      <td id="email-label">Email</td>
+      <td id="email">mario.rossi@example.com</td>
+    </tr>
+    <tr>
+      <td id="telefono-label">Numero di Telefono</td>
+      <td id="telefono">+39 123 4567890</td>
+    </tr>
+    <tr>
+      <td id="indirizzo-label">Indirizzo</td>
+      <td id="indirizzo">Via Roma, 123, 00100, Roma, Italia</td>
+    </tr>
+
+
+    <tr>
+      <td id="watches-repaired-label">Quantità di Orologi Riparati</td>
+      <td id="watches-repaired">20</td>
+    </tr>
+    <tr>
+      <td id="document-type-label">Tipo di Documento Lasciato</td>
+      <td id="document-type">Carta d'identità</td>
+    </tr>
+  </tbody>
+</table>
+
+<!--modifica bottone-->
+<button class="btn" id="email-btn"  onclick="changeAttribute('email')">Modifica email</button>
+<button class="btn" id="numero-btn" onclick="changeAttribute('telefono')">Modifica numero</button>
+<button class="btn"  id="indirizzo-btn" onclick="changeAttribute('indirizzo')">Modifica indirizzo</button>
+
+<br><br><br>
+<!--footer-->
+<footer>
+  <h2 id="footer-title">Bit Watch Il Nostro Laboratorio di Orologeria</h2>
+
+  <p id="footer-email"><a href="mailto:info@laboratorioorologi.com"></a>Email: info@laboratorioorologi.com</p>
+  <p id="footer-phone">Telefono: +39 123 4567890</p>
+  <p id="footer-address">Indirizzo: Via degli Orologiai, 123, 00100, Città</p>
+
+  <div class="social-icons">
+    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+  </div>
+
+  <p id="footer-copyright">&copy; 2024 Il Nostro Laboratorio di Orologeria. Tutti i diritti riservati.</p>
+</footer>
+
+<script>
+
+  // Funzione per cambiare la lingua
+function changeLanguage(lang) {
+
+    const translations = {
+        'it': {
+          'header-attribute': 'Attributo',
+    'header-value': 'Valore',
+    'name-label': 'Nome',
+    
+    'surname-label': 'Cognome',
+    'watches-repaired-label': 'Quantità di Orologi Riparati',
+    'document-type-label': 'Tipo di Documento Lasciato',
+    'email': 'Email',
+    'indirizzo-btn':'modifica indirizzo',
+    'email-btn': 'Modifica email',
+    'numero-btn': 'Modifica numero',
+    'telefono-label': 'Telefono',
+    'indirizzo-label': 'Indirizzo',
+    'footer-title': 'Bit Watch Il Nostro Laboratorio di Orologeria',
+    'footer-email': 'Email: <a href="mailto:info@laboratorioorologi.com">info@laboratorioorologi.com</a>',
+    'footer-phone': 'Telefono: +39 123 4567890',
+    'footer-address': 'Indirizzo: Via degli Orologiai, 123, 00100, Città',
+    'footer-copyright': '&copy; 2024 Il Nostro Laboratorio di Orologeria. Tutti i diritti riservati.',
+    'home-link': 'Home',
+    'watches-link': 'I miei orologi',
+    'assistance-link': 'Assistenza',
+    'my-data-link': 'I miei dati',
+    'my-data-link1':'esci',
+
+
+        },
+        'en': {
+          'header-attribute': 'Attribute',
+    'header-value': 'Value',
+    'name-label': 'Name',
+    'surname-label': 'Surname',
+    'watches-repaired-label': 'Watches Repaired Quantity',
+    'document-type-label': 'Document Left Type',
+    'email': 'Email',
+    'telefono-label': 'Phone',
+    'indirizzo-label': 'Address',
+    'footer-title': 'Bit Watch Our Watchmaking Laboratory',
+    'footer-email': 'Email: <a href="mailto:info@watchlab.com">info@watchlab.com</a>',
+    'footer-phone': 'Phone: +1 123 4567890',
+    'footer-address': 'Address: 123 Watchmakers Street, 00100, City',
+    'footer-copyright': '&copy; 2024 Our Watchmaking Laboratory. All rights reserved.',
+    'email-btn': 'Change email',
+    'numero-btn': 'Change number',
+    'indirizzo-btn': 'Change address',
+    'home-link': 'Home',
+    'watches-link': 'My Watches',
+    'assistance-link': 'Assistance',
+   'my-data-link': 'My Data',
+   'my-data-link1':'log out'
+
+
+  }
+            
+        
+    };
+
+    // Cambia i testi dei label in base alla lingua
+    Object.keys(translations[lang]).forEach(function (key) {
+        const element = document.getElementById(key);
+        if (element) {
+            element.textContent = translations[lang][key];
+        }
+    });
+}
+
+
+    function changeAttribute(attribute) {
+      const newValue = prompt(`Inserisci il nuovo valore per ${attribute}`);
+      if (newValue !== null) {
+        const element = document.getElementById(attribute);
+        if (element) {
+          element.textContent = newValue;
+        }
+      }
+    }
+  
+
+
+
+</script>
+
+
+
+
+    
+</body>
+</html>

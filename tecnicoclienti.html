@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dati Clienti(utente)</title>
+    <style>
+        body {
+            font-family: Koulen;
+            color: white;
+    
+          margin: 0;
+          padding: 0;
+          background-image: url(img/sfondo.jpg);
+          background-size: contain;
+
+          
+        }
+            
+        /*tabella principlae clienti*/
+        table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color:  #135A3A;
+      
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #006400;
+    }
+
+        
+
+
+    @keyframes scrollImages {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
+
+
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
+/*bottone filtro*/
+.btn{
+   margin: 10px;
+
+font-family: Koulen;
+font-weight: 0;
+font-size: 14px;
+color: black;
+background-color: #135A3A;
+padding: 10px 30px;
+border: solid black 2px;
+box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+border-radius: 50px;
+transition : 1000ms;
+transform: translateY(0);
+display: flex;
+flex-direction: row;
+align-items: center;
+cursor: pointer;
+}
+
+.btn:hover{
+
+transition : 1000ms;
+padding: 10px 50px;
+transform : translateY(-0px);
+background-color: #fff;
+color: #135A3A;
+border: solid 2px #135A3A;
+}
+@media screen and (max-width: 768px) {
+    .btn {
+        font-size: 12px;
+        padding: 8px 20px;
+    }
+}
+
+/*bottone elimina*/
+button.rimuovi{
+        margin: 10px;
+
+    font-family: Koulen;
+    font-weight: 0;
+    font-size: 14px;
+    color: white;
+    background-color: red;
+    padding: 10px 30px;
+    border: solid black 2px;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border-radius: 50px;
+    transition : 1000ms;
+    transform: translateY(0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    }
+    .rimuovi:hover{
+
+transition : 1000ms;
+padding: 10px 50px;
+transform : translateY(-0px);
+background-color: #fff;
+color: #135A3A;
+border: solid 2px #135A3A;
+}
+
+
+/*navbar*/
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      margin: 5px 0; 
+      font-size: 16px;
+    }
+    nav a:hover {
+      color: #006400; 
+    }
+
+    #main-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      background-color:rgba(19, 90, 58, 0.8);
+      padding: 10px;
+    }
+
+    #home-link,
+    #watches-link,
+    #assistance-link,
+    #my-data-link {
+      text-decoration: none;
+      color: white;
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    #home-link:hover,
+    #watches-link:hover,
+    #assistance-link:hover,
+    #my-data-link:hover {
+      color: #006400;
+    }
+    /*footer*/
+    footer {
+      background-color: #135A3A;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+
+
+
+
+    @keyframes scrollImages {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
+
+
+    </style>
+</head>
+
+
+
+
+
+
+
+
+<body>
+
+    <!--navbar-->
+    <nav id="main-nav">
+        <a href="pagina_tecnico.html" id="watch">Orologi</a>  
+        <a href="tecnicoclienti.html" id="info"> dati Clienti</a>
+        <a href="index.html" id="my-data-link1">esci</a>
+
+      </nav>
+      <button class="btn" onclick="changeLanguage('it')">Italiano</button>
+      <button class="btn" onclick="changeLanguage('en')">English</button>
+
+
+
+    <button id="filtra" class="btn"onclick="filtraPerNome()">Filtra per Ordine alfabetico</button>
+
+    <table id="tabella">
+        <thead>
+            <tr>
+                <th id="name">Nome</th>
+                <th >Email</th>
+                <th id="telefono">Telefono</th>
+                <th id="andress">Residenza</th>
+                <th id="delete">Cancella Dati</th>
+            </tr>
+        </thead>
+        <tbody id="contenitore">
+            <!-- I dati verranno inseriti qui dinamicamente -->
+        </tbody>
+    </table>
+    <br><br><br><br><br>
+  
+
+
+<!--footer-->
+<footer>
+    <h2 id="footer-title">Bit Watch Il Nostro Laboratorio di Orologeria</h2>
+  
+    <p id="footer-email"><a href="mailto:info@laboratorioorologi.com"></a>Email: info@laboratorioorologi.com</p>
+    <p id="footer-phone">Telefono: +39 123 4567890</p>
+    <p id="footer-address">Indirizzo: Via degli Orologiai, 123, 00100, Città</p>
+  
+    <div class="social-icons">
+      <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+    </div>
+  
+    <p id="footer-copyright">&copy; 2024 Il Nostro Laboratorio di Orologeria. Tutti i diritti riservati.</p>
+  </footer>
+  
+    <script>
+        //dati clienti
+        var negozioOrologi = {
+            orologi: [
+                { nome: "Mario", email: "cicciopanzo@gmail.com", telefono: 23435353, residenza: "via giulo 25 Roma",bottone:"elimina" },
+                { nome: "Mario", email: "kekko@gmail,com", telefono: 343535353, residenza: "Via Magnolie 30 Cagliari",bottone:"elimina" },
+                { nome: "Gianni", email: "pupu@hotmail.com", telefono: 5575756, residenza: "Via PAoli 44 Napoli",bottone:"elimina" },
+                { nome: "Gianni", email: "rurur@gmail.com", telefono: 45657757, residenza: "Via Orchidee 60 Pisa",bottone:"elimina" },
+                { nome: "Kevin", email: "percheleggi@libero.it", telefono: 6768869, residenza: "Via Napoli 23 Milano",bottone:"elimina" },
+                { nome: "Kevin", email: "forzainter@gmail.com", telefono: 68686969, residenza: "Via Deledda 50 Roma",bottone:"elimina" },
+                { nome: "Bernardo", email: "forzaroma@gmail.ocm", telefono: 678797979, residenza: "Via Benedetto 70 Palermo",bottone:"elimina" },
+                { nome: "Bernardo", email: "papa@gmail.com", telefono: 867879797, residenza: "Via Libertà 80 Cagliari",bottone:"elimina" },
+                { nome: "Giorgia", email: "rodridf@gmail.con", telefono: 79797979, residenza: "Via Segni 30 Roma",bottone:"elimina" },
+                { nome: "Giorgia", email: "allahcic@gmail.com", telefono: 557567686, residenza: "Via Cagliari Olbia",bottone:"elimina" },
+            ],
+
+
+            mostraOrologi: function (orologiFiltrati) {
+                var elencoOrologi = document.getElementById("contenitore");
+                // Cancella eventuale contenuto nella tabella
+                elencoOrologi.innerHTML = "";
+
+                orologiFiltrati.forEach(function (prodotto, index) {
+                    var riga = elencoOrologi.insertRow();
+
+                    var cellaNome = riga.insertCell(0);
+                    cellaNome.textContent = prodotto.nome;
+
+                    var cellaemail = riga.insertCell(1);
+                    cellaemail.textContent = prodotto.email;
+
+                    var cellatelefono = riga.insertCell(2);
+                    cellatelefono.textContent = prodotto.telefono;
+
+                    var cellaresidenza = riga.insertCell(3);
+                     cellaresidenza.textContent = prodotto.residenza;
+
+                    //creazione bottone elimina
+                     var cellaElimina = riga.insertCell(4);
+                    var bottoneElimina = document.createElement("button");
+                    bottoneElimina.classList.add("rimuovi");
+                   
+                    bottoneElimina.textContent = "Delete";
+                    bottoneElimina.addEventListener("click", function () {
+                        negozioOrologi.eliminaRiga(index);
+                    });
+                    cellaElimina.appendChild(bottoneElimina);
+                });
+            },
+
+            eliminaRiga: function (index) {
+                negozioOrologi.orologi.splice(index, 1);
+                negozioOrologi.mostraOrologi(negozioOrologi.orologi);
+            }
+        };
+
+
+
+
+        // Mostra tutti gli orologi iniziali
+        negozioOrologi.mostraOrologi(negozioOrologi.orologi);
+
+        function filtraPerNome() {
+   
+    negozioOrologi.orologi.sort(function(a, b) {
+        var nomeA = a.nome.toUpperCase(); 
+        var nomeB = b.nome.toUpperCase(); 
+        if (nomeA < nomeB) {
+            return -1; 
+        }
+        if (nomeA > nomeB) {
+            return 1; 
+        }
+        return 0; 
+    });
+    negozioOrologi.mostraOrologi(negozioOrologi.orologi);
+
+}
+
+function changeLanguage(lang) {
+        // Definisci le traduzioni per le lingue supportate
+        const translations = {
+            'it': {
+                'name': 'Nome',
+                'telefono': 'Telefono',
+                'andress': 'Residenza',
+                'delete': 'Cancella Dati',
+                'watch': 'orologi',
+                'info': 'dati clienti',
+                'my-data-link1':'esci',
+                'filtra':'filtra ordine alafabetico',
+                'Delete':'elimina'
+                // Aggiungi altre traduzioni secondo necessità
+            },
+            'en': {
+                'name': 'Name',
+                'telefono': 'Phone',
+                'andress': 'Address',
+                'delete': 'Delete Data',
+                'watch': 'watch',
+                'info': 'info clients',
+                'filtra':'filter alhabetical order',
+                'Delete': 'delete',
+                'my-data-link1':'log out'
+
+
+
+                // Aggiungi altre traduzioni secondo necessità
+            }
+        };
+
+        // Cambia i testi dei label in base alla lingua
+        Object.keys(translations[lang]).forEach(function (key) {
+            const element = document.getElementById(key);
+            if (element) {
+                element.textContent = translations[lang][key];
+            }
+        });
+    }
+
+    
+
+
+    </script>
+
+</body>
+</html>

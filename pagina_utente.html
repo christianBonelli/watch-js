@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistenza Utente</title>
+    <style>
+        body{
+            background-image: url(img/sfondo.jpg);
+             background-size: contain;
+             padding: 0;
+             margin: 0;
+             color: white;
+             font-family: Koulen;
+
+            
+        }
+        /*tabella principale*/
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color:rgba(102, 204, 158, 0.8);
+        
+            
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color:#135A3A;
+        }
+         /* Stili specifici per schermi più piccoli */
+         @media screen and (max-width: 600px) {
+            table {
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+                background-color:#135A3A;
+            }
+
+            th {
+                text-align: center;
+            }
+        }
+        footer {
+      background-color: #135A3A;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+
+
+
+
+    @keyframes scrollImages {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
+/*classe bottone*/
+.btn{
+   margin: 10px;
+
+font-family: Koulen;
+font-weight: 0;
+font-size: 14px;
+color: black;
+background-color: #135A3A;
+padding: 10px 30px;
+border: solid black 2px;
+box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+border-radius: 50px;
+transition : 1000ms;
+transform: translateY(0);
+display: flex;
+flex-direction: row;
+align-items: center;
+cursor: pointer;
+}
+
+.btn:hover{
+
+transition : 1000ms;
+padding: 10px 50px;
+transform : translateY(-0px);
+background-color: #fff;
+color: #135A3A;
+border: solid 2px #135A3A;
+}
+@media screen and (max-width: 768px) {
+    .btn {
+        font-size: 12px;
+        padding: 8px 20px;
+    }
+}
+
+form {
+  width: 300px;
+  margin: 0 auto;
+  background-color: #006400;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+}
+
+input[type="text"], textarea, input[type="date"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #135A3A;
+
+}
+
+input[type="submit"] {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #135A3A;
+  color: white;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color:#135A3A;
+}
+
+/*navbar*/
+
+nav a {
+      text-decoration: none;
+      color: white;
+      margin: 5px 0; 
+      font-size: 16px;
+    }
+    nav a:hover {
+      color: #006400; 
+    }
+
+    #main-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      background-color:rgba(19, 90, 58, 0.8);
+      padding: 10px;
+    }
+
+    #home-link,
+    #watches-link,
+    #assistance-link,
+    #my-data-link {
+      text-decoration: none;
+      color: white;
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    #home-link:hover,
+    #watches-link:hover,
+    #assistance-link:hover,
+    #my-data-link:hover {
+      color: #006400;
+    }
+    footer {
+      background-color: #135A3A;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    
+
+    
+  </style>
+
+
+
+
+
+</style>
+</head>
+<body>
+    <!--navbar-->
+    <nav id="main-nav">
+        <a href="homeutente.html" id="">Home</a>
+        <a href="pagina_utente.html" id="assistance-link">Assistenza</a>       
+        <a href="imieidati.html" id="my-data-link">I miei dati</a>
+        <a href="index.html" id="my-data-link1">esci</a>
+
+      </nav>
+        
+     <!--bottoni cambio lingua-->
+    <div id="language-selector">
+        <button class="btn" data-lang="it" onclick="changeLanguage('it')">Italiano</button>
+        <button class="btn" data-lang="en" onclick="changeLanguage('en')">English</button>
+        <br>
+    </div>
+    <table id="tabella">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th id="label-orologio">Orologio</th>
+            <th id="label-problemi">problemi</th>
+            <th id="label-data">Data</th>
+            <th id="label-stato">stato riparazioni</th>
+          </tr>
+
+        </thead>
+        <form>
+      
+        <label for="orologio"id="label-orologio-input"><h2>che tipo di orologio</h2></label>
+        <input type="text" id="orologio">
+        <br>
+        <label for="problemi"id="label-problemi-input"><h2>problemi orologio</h2></label>
+        <input type="text" id="problemi">
+        <br>
+        <label for="data"id="label-data-input"><h2>data</h2></label>
+        <input type="date" id="data">
+        <br>
+        <button class="btn" type="button" id="button-add" onclick="aggiungi()">aggiungi appuntamento</button>
+    </form>
+          <!-- Qui verranno aggiunti dinamicamente gli appuntamenti -->
+      </table>
+    
+
+<br><br><br><br><br>
+
+
+<!--footer-->
+<footer>
+    <h2 id="footer-title">Bit Watch Il Nostro Laboratorio di Orologeria</h2>
+  
+    <p id="footer-email">Email: info@laboratorioorologi.com</p>
+    <p id="footer-phone">Telefono: +39 123 4567890</p>
+    <p id="footer-address">Indirizzo: Via degli Orologiai, 123, 00100, Città</p>
+  
+    <div class="social-icons">
+        <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+        </div>
+      
+    <p id="footer-copyright">&copy; 2024 Il Nostro Laboratorio di Orologeria. Tutti i diritti riservati.</p>
+  </footer>
+
+<script src="utente.js"></script>
+
+
+
+
+
+    
+</body>
+
+
+
+</html>

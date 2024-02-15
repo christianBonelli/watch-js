@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Login</title>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url(img/sfondo.jpg);
+        background-size: contain;
+
+      }
+      
+      .struttura {
+        text-align: center;
+        background-color: #135A3A;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      
+      
+      .struttura h1 {
+        color: white;
+      }
+      
+      .formalogin {
+        margin-top: 20px;
+      }
+      
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      label {
+        color: white;
+        margin-bottom: 5px;
+      }
+      
+      input {
+        padding: 10px;
+        margin: 5px 0;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      
+      .btn{
+   margin: 10px;
+
+font-family: Koulen;
+font-weight: 0;
+font-size: 20px;
+color: black;
+background-color: #135A3A;
+padding: 10px 30px;
+border: solid black 2px;
+box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+border-radius: 50px;
+transition : 1000ms;
+transform: translateY(0);
+display: flex;
+flex-direction: row;
+align-items: center;
+cursor: pointer;
+}
+
+.btn:hover{
+
+transition : 1000ms;
+padding: 10px 50px;
+transform : translateY(-0px);
+background-color: #fff;
+color: #135A3A;
+border: solid 2px #135A3A;
+}
+@media screen and (max-width: 768px) {
+    .btn {
+        font-size: 12px;
+        padding: 8px 20px;
+    }
+}
+    </style>
+</head>
+<body>
+
+
+
+
+    <div class="struttura">
+          <div id="language-selector">
+
+<!--selettore lingua-->
+    <button class="btn" data-lang="it" onclick="changeLanguage('it')">Italiano</button>
+    <button class="btn" data-lang="en" onclick="changeLanguage('en')">English</button>
+</div>
+<!--form login-->
+        <h1 id="access-title">Accesso area riservata Utenti e Tecnici</h1>
+        <h1>Bit Watch</h1>
+        <br>
+        <div class="formalogin">
+            <form>
+                <label for="nome" id="username-label">Inserisci il nome Utente</label>
+                <input type="text" id="nome">
+                <label for="password" id="password-label">Inserisci la password</label>
+                <input type="password" id="password">
+                <button class="btn" type="button" id="accedi" onclick="login()">Invia</button>
+            </form>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
